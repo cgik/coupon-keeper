@@ -27,9 +27,6 @@ Load `dist/` as an unpacked extension:
 - **Chrome:** `chrome://extensions` → enable Developer mode → Load unpacked → pick `dist/`.
 - **Firefox:** `about:debugging#/runtime/this-firefox` → Load Temporary Add-on → pick `dist/manifest.json`.
 
-Before publishing to Firefox, replace the placeholder
-`browser_specific_settings.gecko.id` in `src/manifest.json` with your own.
-
 ## Layout
 
 ```
