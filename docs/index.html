@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coupon Keeper</title>
+    <meta name="description" content="Keep your own coupon codes in your browser and get a reminder before they expire. Nothing leaves your device." />
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="../../../coupon-keeper-site">
+          <img src="icon.png" alt="" width="28" height="28" />
+          Coupon Keeper
+        </a>
+        <a href="https://github.com/cgik/coupon-keeper">Source code</a>
+      </header>
+
+      <main>
+        <section class="ticket" aria-labelledby="title">
+          <div class="ticket-main">
+            <h1 id="title">Use your coupon codes before they expire.</h1>
+            <p class="lede">
+              A browser extension that holds the codes stores email you and reminds you five days before each
+              one runs out. It never sees the sites you visit.
+            </p>
+            <div class="install">
+              <!-- TODO: replace with the store listing URLs once published. -->
+              <a class="button button-primary" href="#chrome">Add to Chrome</a>
+              <a class="button button-secondary" href="#firefox">Add to Firefox</a>
+            </div>
+          </div>
+          <div class="ticket-stub" aria-hidden="true">
+            <div class="stub-code">NO-TRACKING</div>
+            <p class="stub-note">Works in Chrome and Firefox. Free.</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="how">
+          <figure class="screenshot">
+            <img src="popup.png" alt="The Coupon Keeper popup listing three coupons with their codes and expiry dates, one marked expired." width="360" height="520" />
+            <figcaption>The whole app lives in the toolbar popup.</figcaption>
+          </figure>
+          <div>
+            <h2 id="how">Save it once, find it at checkout</h2>
+            <p>
+              When a store sends you a code, add it with the store name, the expiry date and any fine print,
+              like a minimum order. Your coupons are sorted by whichever runs out first.
+            </p>
+            <p>
+              Five days before a code expires, you get one notification with the code in it. At checkout, open
+              the popup and copy it with one click.
+            </p>
+            <p>
+              Codes that have run out move to an <span class="expired-mark">Expired</span> list instead of
+              disappearing, so you can delete them when you're ready.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="private">
+          <div>
+            <h2 id="private">What it can't do</h2>
+            <p>Most coupon extensions find deals by watching where you shop. This one only knows what you type into it.</p>
+          </div>
+          <div>
+            <ul class="cannot-list">
+              <li>
+                <strong>It can't see the sites you visit.</strong>
+                <span>It doesn't ask for access to any website, so the browser won't let it read pages.</span>
+              </li>
+              <li>
+                <strong>It doesn't connect to the internet.</strong>
+                <span>Your coupons are stored in your browser and never sent anywhere.</span>
+              </li>
+              <li>
+                <strong>It has no account.</strong>
+                <span>No sign-up, no email address, nothing to link back to you.</span>
+              </li>
+            </ul>
+            <p>
+              You don't have to take our word for it. The only permissions it requests are <code>storage</code>,
+              <code>alarms</code> and <code>notifications</code>, which your browser shows before you install.
+              The source code is public. Read the <a href="privacy.html">privacy policy</a> for the details.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="license">
+          <div>
+            <h2 id="license">Free for personal use</h2>
+          </div>
+          <div>
+            <!-- TODO: match this to the license you choose. -->
+            <p>
+              Coupon Keeper is free to install and use. Its source code is public under the
+              <a href="https://github.com/cgik/coupon-keeper/blob/main/LICENSE.md">project license</a>.
+            </p>
+            <p>
+              Want to build Coupon Keeper into a commercial product? Email
+              <a href="mailto:contact@wistful.io">contact@wistful.io</a> about a commercial license.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/cgik/coupon-keeper">Source code</a>
+        <a href="mailto:contact@wistful.io">Contact</a>
+      </footer>
+    </div>
+  </body>
+</html>

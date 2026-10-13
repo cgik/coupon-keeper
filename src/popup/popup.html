@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Coupon Keeper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <h1>Coupons</h1>
+      <button id="add-button" type="button" class="primary">Add coupon</button>
+    </header>
+
+    <form id="coupon-form" hidden novalidate>
+      <label>
+        Store
+        <input name="store" autocomplete="off" placeholder="e.g. Newegg" />
+      </label>
+      <p class="field-error" data-error-for="store"></p>
+
+      <label>
+        Code
+        <input name="code" autocomplete="off" spellcheck="false" placeholder="e.g. SAVE10" />
+      </label>
+      <p class="field-error" data-error-for="code"></p>
+
+      <label>
+        Expires
+        <input name="expiresOn" type="date" />
+      </label>
+      <p class="field-error" data-error-for="expiresOn"></p>
+
+      <label>
+        Notes
+        <textarea name="notes" rows="2" placeholder="Optional, e.g. min. $50 order"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button id="cancel-button" type="button">Cancel</button>
+        <button type="submit" class="primary">Save</button>
+      </div>
+    </form>
+
+    <main>
+      <p id="empty-state" class="empty" hidden>No coupons yet. Add one to get a reminder before it expires.</p>
+      <ul id="active-list" class="coupon-list"></ul>
+
+      <section id="expired-section" hidden>
+        <h2>Expired</h2>
+        <ul id="expired-list" class="coupon-list"></ul>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

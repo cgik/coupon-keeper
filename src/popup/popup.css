@@ -1,0 +1,219 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f5f5f4;
+  --border: #e2e2df;
+  --text: #1c1c1a;
+  --muted: #6b6b66;
+  --accent: #2f6f4f;
+  --accent-text: #ffffff;
+  --danger: #b3261e;
+  --code-bg: #e9efe9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1b1a;
+    --surface: #252523;
+    --border: #3a3a37;
+    --text: #ececea;
+    --muted: #a3a39d;
+    --accent: #6fbf8f;
+    --accent-text: #10241a;
+    --danger: #f2a49e;
+    --code-bg: #213028;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Layout rules like `display: grid` would otherwise override the hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  width: 360px;
+  max-height: 560px;
+  margin: 0;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+h2 {
+  margin: 16px 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 5px 10px;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Form */
+
+form {
+  display: grid;
+  gap: 2px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-error {
+  min-height: 1em;
+  margin: 2px 0 6px;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Coupon list */
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 8px;
+}
+
+.coupon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.coupon {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#expired-list .coupon {
+  opacity: 0.6;
+}
+
+.coupon-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.coupon-store {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.coupon-expiry {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.coupon-code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.coupon-code {
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--code-bg);
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.coupon-notes {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.coupon-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.link-button:hover {
+  color: var(--text);
+}
+
+.link-button.danger {
+  color: var(--danger);
+  font-weight: 600;
+}
