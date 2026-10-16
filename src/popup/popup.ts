@@ -12,6 +12,7 @@ import {
 } from "../core/coupon.ts";
 import { toLocalIsoDate, type IsoDate } from "../core/dates.ts";
 import { loadCoupons, saveCoupons } from "../shell/storage.ts";
+import { attachDatePicker } from "./date-picker.ts";
 
 /*
  * Storage is the single owner of coupon state. Every change is written
@@ -38,6 +39,15 @@ const elements = {
 };
 
 const view: PopupView = { coupons: [], editingId: null, pendingDeleteId: null };
+
+const expiryPicker = attachDatePicker(
+  {
+    input: requireElement<HTMLInputElement>("expires-on"),
+    toggle: requireElement<HTMLButtonElement>("date-picker-toggle"),
+    panel: requireElement<HTMLElement>("date-picker"),
+  },
+  () => toLocalIsoDate(new Date()),
+);
 
 elements.addButton.addEventListener("click", () => openForm(null));
 elements.cancelButton.addEventListener("click", closeForm);
@@ -85,6 +95,7 @@ async function commit(coupons: Coupon[]): Promise<void> {
 
 function openForm(coupon: Coupon | null): void {
   view.editingId = coupon?.id ?? null;
+  expiryPicker.close();
   writeDraft(elements.form, coupon ?? { store: "", code: "", expiresOn: "", notes: "" });
   showFieldErrors({});
   elements.form.hidden = false;
@@ -94,6 +105,7 @@ function openForm(coupon: Coupon | null): void {
 
 function closeForm(): void {
   view.editingId = null;
+  expiryPicker.close();
   elements.form.reset();
   elements.form.hidden = true;
   elements.addButton.hidden = false;

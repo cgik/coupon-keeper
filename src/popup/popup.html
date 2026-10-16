@@ -24,10 +24,14 @@
       </label>
       <p class="field-error" data-error-for="code"></p>
 
-      <label>
-        Expires
-        <input name="expiresOn" type="date" />
-      </label>
+      <div class="field">
+        <label for="expires-on">Expires</label>
+        <div class="date-field">
+          <input id="expires-on" name="expiresOn" autocomplete="off" spellcheck="false" placeholder="YYYY-MM-DD" />
+          <button id="date-picker-toggle" type="button" aria-controls="date-picker" aria-expanded="false">Pick date</button>
+        </div>
+        <div id="date-picker" class="date-picker" hidden></div>
+      </div>
       <p class="field-error" data-error-for="expiresOn"></p>
 
       <label>

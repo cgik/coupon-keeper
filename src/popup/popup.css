@@ -114,6 +114,79 @@ textarea {
   resize: vertical;
 }
 
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.date-field {
+  display: flex;
+  gap: 6px;
+}
+
+.date-field input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Date picker: drawn in-page because Firefox's native one can open behind the popup. */
+
+.date-picker {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+.date-picker-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.date-picker-title {
+  font-weight: 600;
+}
+
+.date-picker-step {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.date-picker-weekday {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 2px 0;
+}
+
+.date-picker-day {
+  padding: 4px 0;
+  border-color: transparent;
+  background: none;
+}
+
+.date-picker-day:hover {
+  background: var(--surface);
+}
+
+.date-picker-day.today {
+  border-color: var(--accent);
+}
+
+.date-picker-day.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
 .field-error {
   min-height: 1em;
   margin: 2px 0 6px;

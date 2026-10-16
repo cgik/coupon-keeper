@@ -43,7 +43,7 @@ export function validateDraft(draft: CouponDraft): DraftValidation {
   const errors: DraftErrors = {};
   if (store === "") errors.store = "Store is required.";
   if (code === "") errors.code = "Code is required.";
-  if (expiresOn === null) errors.expiresOn = "Enter a valid expiry date.";
+  if (expiresOn === null) errors.expiresOn = "Enter a date as YYYY-MM-DD, or use Pick date.";
 
   if (expiresOn === null || Object.keys(errors).length > 0) {
     return { ok: false, errors };
